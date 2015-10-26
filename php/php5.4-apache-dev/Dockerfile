@@ -4,7 +4,8 @@ FROM leloupmechant/docker-starters:php5.4-apache
 ENV env dev
 
 #env app dir
-ENV app_dir /app
+ENV app_dir /var/www/
+
 
 #install node & build tools
 RUN apt-get update
@@ -12,8 +13,8 @@ RUN apt-get update
 RUN apt-get install -y curl
 RUN curl --silent --location https://deb.nodesource.com/setup_0.12 | bash -
 RUN apt-get install --yes nodejs
-RUN apt-get install --yes nodejs-legacy
 RUN apt-get install -y build-essential
+RUN apt-get install --yes nodejs-legacy
 RUN apt-get install -y ruby
 RUN gem install sass
 
